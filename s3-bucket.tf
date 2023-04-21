@@ -3,7 +3,7 @@ module "s3_bucket_for_logs" {
   version = "2.8.0"
   bucket = "my-s3-bucket-for-logs"
   acl    = "log-delivery-write"
-  bucket_prefix = "alantony"
+  
 
   # Allow deletion of non-empty bucket
   force_destroy = true
