@@ -1,8 +1,12 @@
-module "s3-bucket" {
-  source  = "app.terraform.io/example-org-0f84f7/s3-bucket/aws"
+module "s3_bucket_for_logs" {
+  source = "terraform-aws-modules/s3-bucket/aws"
   version = "2.8.0"
-  bucket = "my-s3-bucket-test"
-  acl    = "private"
-  bucket_prefix = "alantony123"
+  bucket = "my-s3-bucket-for-logs"
+  acl    = "log-delivery-write"
+  bucket_prefix = "alantony"
 
+  # Allow deletion of non-empty bucket
+  force_destroy = true
+
+  attach_elb_log_delivery_policy = true
 }
