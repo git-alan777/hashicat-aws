@@ -3,7 +3,7 @@ module "s3_bucket" {
   version = "2.8.0"
   bucket = "mollyhollyjolly"
   acl    = "private"
-  bucket_prefix = "fish"
+  bucket_prefix = ""
 
   versioning = {
     enabled = true
